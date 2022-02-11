@@ -10,6 +10,13 @@ import {
   Collapse,
   NavItem,
   NavbarToggler,
+  Modal,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Button,
+  ModalHeader,
 } from "reactstrap";
 
 class Header extends Component {
@@ -19,6 +26,9 @@ class Header extends Component {
     this.toggle = this.toggle.bind(this);
     this.onMouseEnter = this.onMouseEnter.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.setuser = this.setuser.bind(this);
+    this.togglemodel = this.togglemodel.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
       dropdownOpen1: false,
       dropdownOpen2: false,
@@ -29,15 +39,30 @@ class Header extends Component {
       dropdownOpen7: false,
       dropdownOpen8: false,
       toggleNav: false,
+      user: null,
+      model: false,
+      value: "",
     };
   }
-
+  setuser(name) {
+    this.setState((prevState) => ({
+      user: name,
+      value: "",
+    }));
+  }
   toggle(id) {
     this.setState((prevState) => ({
       dropdownOpen: !prevState.dropdownOpen,
     }));
   }
-
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+  togglemodel() {
+    this.setState((prevState) => ({
+      model: !prevState.model,
+    }));
+  }
   onMouseEnter(id) {
     switch (id) {
       case 1:
@@ -121,8 +146,21 @@ class Header extends Component {
                 className="search"
               ></input>
             </div>
+            {this.state.user && (
+              <h3 className="pt-4 pl-5">Welcome {this.state.user}</h3>
+            )}
+
             <div className="col pt-3 ">
-              <button className="login">Login/Register</button>
+              {!this.state.user && (
+                <button className="login" onClick={this.togglemodel}>
+                  Login/Register
+                </button>
+              )}
+              {this.state.user && (
+                <button className="login" onClick={() => this.setuser(null)}>
+                  Logout
+                </button>
+              )}
             </div>
             <div className="col pt-3">
               <button className="cart">Cart</button>
@@ -363,6 +401,41 @@ class Header extends Component {
             </Collapse>
           </div>
         </Navbar>
+        <Modal isOpen={this.state.model}>
+          <ModalHeader>User Login</ModalHeader>
+          <div
+            style={{
+              padding: 30,
+              alignItems: "center",
+              width: "100%",
+              justifyContent: "center",
+            }}
+          >
+            <input
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+              style={{ margin: 10 }}
+              placeholder="User Name"
+            />
+            <br />
+            <input
+              type="password"
+              style={{ margin: 10 }}
+              placeholder="Password"
+            />
+            <br />
+            <button
+              onClick={() => {
+                this.setuser(this.state.value);
+                this.togglemodel();
+              }}
+              style={{ margin: 10 }}
+            >
+              Lesgoo
+            </button>
+          </div>
+        </Modal>
       </React.Fragment>
     );
   }
