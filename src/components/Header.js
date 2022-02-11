@@ -29,6 +29,7 @@ class Header extends Component {
     this.setuser = this.setuser.bind(this);
     this.togglemodel = this.togglemodel.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.toggleCartModel = this.toggleCartModel.bind(this);
     this.state = {
       dropdownOpen1: false,
       dropdownOpen2: false,
@@ -42,6 +43,7 @@ class Header extends Component {
       user: null,
       model: false,
       value: "",
+      cartModel: true,
     };
   }
   setuser(name) {
@@ -91,7 +93,11 @@ class Header extends Component {
         return;
     }
   }
-
+  toggleCartModel() {
+    this.setState((prevState) => ({
+      cartModel: !prevState.cartModel,
+    }));
+  }
   onMouseLeave(id) {
     switch (id) {
       case 1:
@@ -123,7 +129,7 @@ class Header extends Component {
   toggleNav = () => {
     this.setState({ toggleNav: !this.state.toggleNav });
   };
-  render() {
+  render(props) {
     return (
       <React.Fragment>
         <div className="row row-content ">
@@ -163,7 +169,9 @@ class Header extends Component {
               )}
             </div>
             <div className="col pt-3">
-              <button className="cart">Cart</button>
+              <button className="cart" onClick={this.toggleCartModel}>
+                Cart
+              </button>
             </div>
           </div>
         </div>
@@ -433,6 +441,35 @@ class Header extends Component {
               style={{ margin: 10 }}
             >
               Lesgoo
+            </button>
+          </div>
+        </Modal>
+        <Modal isOpen={this.state.cartModel}>
+          <ModalHeader>Cart Items</ModalHeader>
+
+          <div style={{ padding: 20 }}>
+            {this.props.cartproducts.map((a, i) => (
+              <p key={i}>
+                {a.name} {"      "}x{a.quantity}
+              </p>
+            ))}
+          </div>
+          <div>
+            <button
+              onClick={() => {
+                this.toggleCartModel();
+              }}
+              style={{ margin: 10 }}
+            >
+              Close
+            </button>
+            <button
+              onClick={() => {
+                this.toggleCartModel();
+              }}
+              style={{ margin: 10 }}
+            >
+              Place Order
             </button>
           </div>
         </Modal>

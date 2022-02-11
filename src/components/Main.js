@@ -7,11 +7,27 @@ import WhyChoose from "./WhyChoose";
 class Main extends Component {
   constructor(props) {
     super(props);
+    this.setCartProducts = this.setCartProducts.bind(this);
+
+    this.state = {
+      cartproducts: [
+        { name: "apple", quantity: 3 },
+        { name: "bananas", quantity: 2 },
+      ],
+    };
+  }
+  setCartProducts(item) {
+    this.setState((prevState) => ({
+      cartproducts: [...prevState.cartproducts, item],
+    }));
   }
   render() {
     return (
       <React.Fragment>
-        <Header />
+        <Header
+          cartproducts={this.state.cartproducts}
+          setCartProducts={this.setCartProducts}
+        />
         <Slides />
         <AllProducts />
         <WhyChoose />
