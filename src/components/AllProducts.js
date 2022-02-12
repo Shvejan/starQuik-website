@@ -38,7 +38,7 @@ class Products extends Component {
         {!p.quantity && (
           <button
             className="product-btn"
-            onClick={() => this.props.incQuantity(id)}
+            onClick={() => this.props.incQuantity(p.id)}
           >
             ADD
           </button>
@@ -47,14 +47,14 @@ class Products extends Component {
           <div className="row">
             <button
               className="prod-inc-btn col"
-              onClick={() => this.props.decQuantity(id)}
+              onClick={() => this.props.decQuantity(p.id)}
             >
               -
             </button>
             <p className="pt-2">{p.quantity}</p>
             <button
               className="prod-inc-btn col"
-              onClick={() => this.props.incQuantity(id)}
+              onClick={() => this.props.incQuantity(p.id)}
             >
               +
             </button>
@@ -146,20 +146,20 @@ class AllProducts extends Component {
             cat={this.state.Category1}
             incQuantity={this.props.incQuantity}
             decQuantity={this.props.decQuantity}
-            cartproducts={this.props.cartproducts}
+            cartproducts={this.props.cartproducts.slice(1, 4)}
           />
           <TopCat />
           <RenderList
             cat={this.state.Category2}
             incQuantity={this.props.incQuantity}
             decQuantity={this.props.decQuantity}
-            cartproducts={this.props.cartproducts}
+            cartproducts={this.props.cartproducts.slice(3, 6)}
           />
           <RenderList
             cat={this.state.Category3}
             incQuantity={this.props.incQuantity}
             decQuantity={this.props.decQuantity}
-            cartproducts={this.props.cartproducts}
+            cartproducts={this.props.cartproducts.slice(2, 5)}
           />
         </div>
       </div>
