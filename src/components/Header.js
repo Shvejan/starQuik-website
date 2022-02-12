@@ -18,6 +18,7 @@ import {
   Button,
   ModalHeader,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class Header extends Component {
       user: null,
       model: false,
       value: "",
-      cartModel: true,
+      cartModel: false,
     };
   }
   setuser(name) {
@@ -133,14 +134,16 @@ class Header extends Component {
     return (
       <React.Fragment>
         <div className="row row-content ">
-          <div className=" p-4 col-2 col-sm-2">
-            <img
-              src={logo}
-              alt="Logo"
-              className="fluid"
-              style={{ width: 150 }}
-            />
-          </div>
+          <Link to="/">
+            <div className=" p-4 col-2 col-sm-2">
+              <img
+                src={logo}
+                alt="Logo"
+                className="fluid"
+                style={{ width: 150 }}
+              />
+            </div>
+          </Link>
           <div className="row">
             <div className="col pt-3">
               <button className="btnn">Location</button>
@@ -180,231 +183,246 @@ class Header extends Component {
             <NavbarToggler onClick={this.toggleNav} />
             <Collapse isOpen={this.state.toggleNav} navbar>
               <Nav navbar className="">
-                <NavItem>
-                  <Dropdown
-                    className="d-inline-block dropdown"
-                    onMouseOver={() => this.onMouseEnter(1)}
-                    onMouseLeave={() => this.onMouseLeave(1)}
-                    isOpen={this.state.dropdownOpen1}
-                    toggle={() => this.toggle(1)}
-                    style={{ backgroundColor: "#1b1b2a" }}
-                  >
-                    <DropdownToggle
-                      className="text-white"
-                      caret
-                      color="#1b1b2a"
+                <Link to="/categories/Beverages">
+                  <NavItem>
+                    <Dropdown
+                      className="d-inline-block dropdown"
+                      onMouseOver={() => this.onMouseEnter(1)}
+                      onMouseLeave={() => this.onMouseLeave(1)}
+                      isOpen={this.state.dropdownOpen1}
+                      toggle={() => this.toggle(1)}
+                      style={{ backgroundColor: "#1b1b2a" }}
                     >
-                      Beverages
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem header>Category 1</DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem disabled>Item1</DropdownItem>
-                      <DropdownItem disabled>Item2</DropdownItem>
-                      <DropdownItem disabled>Item3</DropdownItem>
-                      <DropdownItem disabled>Item4</DropdownItem>
-                      <DropdownItem disabled>Item5</DropdownItem>
-                      <DropdownItem disabled>Item6</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </NavItem>
-                <NavItem>
-                  <Dropdown
-                    className="d-inline-block dropdown"
-                    onMouseOver={() => this.onMouseEnter(2)}
-                    onMouseLeave={() => this.onMouseLeave(2)}
-                    isOpen={this.state.dropdownOpen2}
-                    toggle={() => this.toggle(2)}
-                    style={{ backgroundColor: "#1b1b2a" }}
-                  >
-                    <DropdownToggle
-                      className="text-white"
-                      caret
-                      color="#1b1b2a"
+                      <DropdownToggle
+                        className="text-white"
+                        caret
+                        color="#1b1b2a"
+                      >
+                        Beverages
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem header>Category 1</DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem disabled>Item1</DropdownItem>
+                        <DropdownItem disabled>Item2</DropdownItem>
+                        <DropdownItem disabled>Item3</DropdownItem>
+                        <DropdownItem disabled>Item4</DropdownItem>
+                        <DropdownItem disabled>Item5</DropdownItem>
+                        <DropdownItem disabled>Item6</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>
+                </Link>
+                <Link to="/categories/Branded Food">
+                  <NavItem>
+                    <Dropdown
+                      className="d-inline-block dropdown"
+                      onMouseOver={() => this.onMouseEnter(2)}
+                      onMouseLeave={() => this.onMouseLeave(2)}
+                      isOpen={this.state.dropdownOpen2}
+                      toggle={() => this.toggle(2)}
+                      style={{ backgroundColor: "#1b1b2a" }}
                     >
-                      Branded Food
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem header>Category 1</DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem disabled>Item1</DropdownItem>
-                      <DropdownItem disabled>Item2</DropdownItem>
-                      <DropdownItem disabled>Item3</DropdownItem>
-                      <DropdownItem disabled>Item4</DropdownItem>
-                      <DropdownItem disabled>Item5</DropdownItem>
-                      <DropdownItem disabled>Item6</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </NavItem>
-                <NavItem>
-                  <Dropdown
-                    className="d-inline-block dropdown"
-                    onMouseOver={() => this.onMouseEnter(3)}
-                    onMouseLeave={() => this.onMouseLeave(3)}
-                    isOpen={this.state.dropdownOpen3}
-                    toggle={() => this.toggle(3)}
-                    style={{ backgroundColor: "#1b1b2a" }}
-                  >
-                    <DropdownToggle
-                      className="text-white"
-                      caret
-                      color="#1b1b2a"
+                      <DropdownToggle
+                        className="text-white"
+                        caret
+                        color="#1b1b2a"
+                      >
+                        Branded Food
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem header>Category 1</DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem disabled>Item1</DropdownItem>
+                        <DropdownItem disabled>Item2</DropdownItem>
+                        <DropdownItem disabled>Item3</DropdownItem>
+                        <DropdownItem disabled>Item4</DropdownItem>
+                        <DropdownItem disabled>Item5</DropdownItem>
+                        <DropdownItem disabled>Item6</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>
+                </Link>
+                <Link to="/categories/Diary,Bakery">
+                  <NavItem>
+                    <Dropdown
+                      className="d-inline-block dropdown"
+                      onMouseOver={() => this.onMouseEnter(3)}
+                      onMouseLeave={() => this.onMouseLeave(3)}
+                      isOpen={this.state.dropdownOpen3}
+                      toggle={() => this.toggle(3)}
+                      style={{ backgroundColor: "#1b1b2a" }}
                     >
-                      Diary,Bakery
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem header>Category 1</DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem disabled>Item1</DropdownItem>
-                      <DropdownItem disabled>Item2</DropdownItem>
-                      <DropdownItem disabled>Item3</DropdownItem>
-                      <DropdownItem disabled>Item4</DropdownItem>
-                      <DropdownItem disabled>Item5</DropdownItem>
-                      <DropdownItem disabled>Item6</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </NavItem>
-
-                <NavItem>
-                  <Dropdown
-                    className="d-inline-block dropdown"
-                    onMouseOver={() => this.onMouseEnter(4)}
-                    onMouseLeave={() => this.onMouseLeave(4)}
-                    isOpen={this.state.dropdownOpen4}
-                    toggle={() => this.toggle(4)}
-                    style={{ backgroundColor: "#1b1b2a" }}
-                  >
-                    <DropdownToggle
-                      className="text-white"
-                      caret
-                      color="#1b1b2a"
+                      <DropdownToggle
+                        className="text-white"
+                        caret
+                        color="#1b1b2a"
+                      >
+                        Diary,Bakery
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem header>Category 1</DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem disabled>Item1</DropdownItem>
+                        <DropdownItem disabled>Item2</DropdownItem>
+                        <DropdownItem disabled>Item3</DropdownItem>
+                        <DropdownItem disabled>Item4</DropdownItem>
+                        <DropdownItem disabled>Item5</DropdownItem>
+                        <DropdownItem disabled>Item6</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>
+                </Link>
+                <Link to="/categories/Fruits & Vegitables">
+                  <NavItem>
+                    <Dropdown
+                      className="d-inline-block dropdown"
+                      onMouseOver={() => this.onMouseEnter(4)}
+                      onMouseLeave={() => this.onMouseLeave(4)}
+                      isOpen={this.state.dropdownOpen4}
+                      toggle={() => this.toggle(4)}
+                      style={{ backgroundColor: "#1b1b2a" }}
                     >
-                      Fruits & Vegitables
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem header>Category 1</DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem disabled>Item1</DropdownItem>
-                      <DropdownItem disabled>Item2</DropdownItem>
-                      <DropdownItem disabled>Item3</DropdownItem>
-                      <DropdownItem disabled>Item4</DropdownItem>
-                      <DropdownItem disabled>Item5</DropdownItem>
-                      <DropdownItem disabled>Item6</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </NavItem>
-                <NavItem>
-                  <Dropdown
-                    className="d-inline-block dropdown"
-                    onMouseOver={() => this.onMouseEnter(5)}
-                    onMouseLeave={() => this.onMouseLeave(5)}
-                    isOpen={this.state.dropdownOpen5}
-                    toggle={() => this.toggle(5)}
-                    style={{ backgroundColor: "#1b1b2a" }}
-                  >
-                    <DropdownToggle
-                      className="text-white"
-                      caret
-                      color="#1b1b2a"
+                      <DropdownToggle
+                        className="text-white"
+                        caret
+                        color="#1b1b2a"
+                      >
+                        Fruits & Vegitables
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem header>Category 1</DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem disabled>Item1</DropdownItem>
+                        <DropdownItem disabled>Item2</DropdownItem>
+                        <DropdownItem disabled>Item3</DropdownItem>
+                        <DropdownItem disabled>Item4</DropdownItem>
+                        <DropdownItem disabled>Item5</DropdownItem>
+                        <DropdownItem disabled>Item6</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>
+                </Link>
+                <Link to="/categories/Frozen Veg">
+                  <NavItem>
+                    <Dropdown
+                      className="d-inline-block dropdown"
+                      onMouseOver={() => this.onMouseEnter(5)}
+                      onMouseLeave={() => this.onMouseLeave(5)}
+                      isOpen={this.state.dropdownOpen5}
+                      toggle={() => this.toggle(5)}
+                      style={{ backgroundColor: "#1b1b2a" }}
                     >
-                      Frozen Veg
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem header>Category 1</DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem disabled>Item1</DropdownItem>
-                      <DropdownItem disabled>Item2</DropdownItem>
-                      <DropdownItem disabled>Item3</DropdownItem>
-                      <DropdownItem disabled>Item4</DropdownItem>
-                      <DropdownItem disabled>Item5</DropdownItem>
-                      <DropdownItem disabled>Item6</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </NavItem>
-                <NavItem>
-                  <Dropdown
-                    className="d-inline-block dropdown"
-                    onMouseOver={() => this.onMouseEnter(6)}
-                    onMouseLeave={() => this.onMouseLeave(6)}
-                    isOpen={this.state.dropdownOpen6}
-                    toggle={() => this.toggle(6)}
-                    style={{ backgroundColor: "#1b1b2a" }}
-                  >
-                    <DropdownToggle
-                      className="text-white"
-                      caret
-                      color="#1b1b2a"
+                      <DropdownToggle
+                        className="text-white"
+                        caret
+                        color="#1b1b2a"
+                      >
+                        Frozen Veg
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem header>Category 1</DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem disabled>Item1</DropdownItem>
+                        <DropdownItem disabled>Item2</DropdownItem>
+                        <DropdownItem disabled>Item3</DropdownItem>
+                        <DropdownItem disabled>Item4</DropdownItem>
+                        <DropdownItem disabled>Item5</DropdownItem>
+                        <DropdownItem disabled>Item6</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>
+                </Link>
+                <Link to="/categories/Non Veg">
+                  <NavItem>
+                    <Dropdown
+                      className="d-inline-block dropdown"
+                      onMouseOver={() => this.onMouseEnter(6)}
+                      onMouseLeave={() => this.onMouseLeave(6)}
+                      isOpen={this.state.dropdownOpen6}
+                      toggle={() => this.toggle(6)}
+                      style={{ backgroundColor: "#1b1b2a" }}
                     >
-                      Non Veg
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem header>Category 1</DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem disabled>Item1</DropdownItem>
-                      <DropdownItem disabled>Item2</DropdownItem>
-                      <DropdownItem disabled>Item3</DropdownItem>
-                      <DropdownItem disabled>Item4</DropdownItem>
-                      <DropdownItem disabled>Item5</DropdownItem>
-                      <DropdownItem disabled>Item6</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </NavItem>
-                <NavItem>
-                  <Dropdown
-                    className="d-inline-block dropdown"
-                    onMouseOver={() => this.onMouseEnter(7)}
-                    onMouseLeave={() => this.onMouseLeave(7)}
-                    isOpen={this.state.dropdownOpen7}
-                    toggle={() => this.toggle(7)}
-                    style={{ backgroundColor: "#1b1b2a" }}
-                  >
-                    <DropdownToggle
-                      className="text-white"
-                      caret
-                      color="#1b1b2a"
+                      <DropdownToggle
+                        className="text-white"
+                        caret
+                        color="#1b1b2a"
+                      >
+                        Non Veg
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem header>Category 1</DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem disabled>Item1</DropdownItem>
+                        <DropdownItem disabled>Item2</DropdownItem>
+                        <DropdownItem disabled>Item3</DropdownItem>
+                        <DropdownItem disabled>Item4</DropdownItem>
+                        <DropdownItem disabled>Item5</DropdownItem>
+                        <DropdownItem disabled>Item6</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>
+                </Link>
+                <Link to="/categories/Home Care">
+                  <NavItem>
+                    <Dropdown
+                      className="d-inline-block dropdown"
+                      onMouseOver={() => this.onMouseEnter(7)}
+                      onMouseLeave={() => this.onMouseLeave(7)}
+                      isOpen={this.state.dropdownOpen7}
+                      toggle={() => this.toggle(7)}
+                      style={{ backgroundColor: "#1b1b2a" }}
                     >
-                      Home Care
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem header>Category 1</DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem disabled>Item1</DropdownItem>
-                      <DropdownItem disabled>Item2</DropdownItem>
-                      <DropdownItem disabled>Item3</DropdownItem>
-                      <DropdownItem disabled>Item4</DropdownItem>
-                      <DropdownItem disabled>Item5</DropdownItem>
-                      <DropdownItem disabled>Item6</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </NavItem>
-                <NavItem>
-                  <Dropdown
-                    className="d-inline-block dropdown"
-                    onMouseOver={() => this.onMouseEnter(8)}
-                    onMouseLeave={() => this.onMouseLeave(8)}
-                    isOpen={this.state.dropdownOpen8}
-                    toggle={() => this.toggle(8)}
-                    style={{ backgroundColor: "#1b1b2a" }}
-                  >
-                    <DropdownToggle
-                      className="text-white"
-                      caret
-                      color="#1b1b2a"
+                      <DropdownToggle
+                        className="text-white"
+                        caret
+                        color="#1b1b2a"
+                      >
+                        Home Care
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem header>Category 1</DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem disabled>Item1</DropdownItem>
+                        <DropdownItem disabled>Item2</DropdownItem>
+                        <DropdownItem disabled>Item3</DropdownItem>
+                        <DropdownItem disabled>Item4</DropdownItem>
+                        <DropdownItem disabled>Item5</DropdownItem>
+                        <DropdownItem disabled>Item6</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>
+                </Link>
+                <Link to="/categories/Personal Care">
+                  <NavItem>
+                    <Dropdown
+                      className="d-inline-block dropdown"
+                      onMouseOver={() => this.onMouseEnter(8)}
+                      onMouseLeave={() => this.onMouseLeave(8)}
+                      isOpen={this.state.dropdownOpen8}
+                      toggle={() => this.toggle(8)}
+                      style={{ backgroundColor: "#1b1b2a" }}
                     >
-                      Personal Care
-                    </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem header>Category 1</DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem disabled>Item1</DropdownItem>
-                      <DropdownItem disabled>Item2</DropdownItem>
-                      <DropdownItem disabled>Item3</DropdownItem>
-                      <DropdownItem disabled>Item4</DropdownItem>
-                      <DropdownItem disabled>Item5</DropdownItem>
-                      <DropdownItem disabled>Item6</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </NavItem>
+                      <DropdownToggle
+                        className="text-white"
+                        caret
+                        color="#1b1b2a"
+                      >
+                        Personal Care
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem header>Category 1</DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem disabled>Item1</DropdownItem>
+                        <DropdownItem disabled>Item2</DropdownItem>
+                        <DropdownItem disabled>Item3</DropdownItem>
+                        <DropdownItem disabled>Item4</DropdownItem>
+                        <DropdownItem disabled>Item5</DropdownItem>
+                        <DropdownItem disabled>Item6</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  </NavItem>
+                </Link>
               </Nav>
             </Collapse>
           </div>
@@ -448,11 +466,15 @@ class Header extends Component {
           <ModalHeader>Cart Items</ModalHeader>
 
           <div style={{ padding: 20 }}>
-            {this.props.cartproducts.map((a, i) => (
-              <p key={i}>
-                {a.name} {"      "}x{a.quantity}
-              </p>
-            ))}
+            {this.props.cartproducts.map((a, i) => {
+              if (a.quantity) {
+                return (
+                  <p key={i}>
+                    {a.name} {"      "}x{a.quantity}
+                  </p>
+                );
+              }
+            })}
           </div>
           <div>
             <button

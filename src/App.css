@@ -144,3 +144,15 @@
   border: 0px;
   border-radius: 10px;
 }
+.prod-inc-btn {
+  background-color: #59e7db;
+  width: 20px;
+  height: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
+  color: white;
+  border: 0px;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-size: x-large;
+}

@@ -6,44 +6,18 @@ import {
   CardImg,
   CardImgOverlay,
   CardBody,
-  CardSubtitle,
 } from "reactstrap";
 import green from "./images/green.png";
 import back from "./images/blue.png";
 import orange from "./images/orange.png";
-import amul from "./images/amul.jpg";
-import oil from "./images/oil.jpg";
-import drink from "./images/drink.jpg";
 import TopCat from "./TopCat";
 
 class Products extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      products: [
-        {
-          title: "Amul Pasteurised Butter - 500 Gm",
-          desc: "Super Price Rs.219 Code Star5",
-          price: "₹12.99",
-          image: amul,
-        },
-        {
-          title: "Sunday Sunflower Oil Pouch - 1 Ltr",
-          desc: "Super Price Rs.105 Code Star5",
-          price: "₹111.00",
-          image: oil,
-        },
-        {
-          title: "Dutchie Strawberry - 200 Ml",
-          desc: "Buy 2 Get 1 Free",
-          price: "₹24.93",
-          image: drink,
-        },
-      ],
-    };
   }
   render() {
-    const card = (p) => (
+    const card = (p, id) => (
       <div className="col-3 justify-content-center">
         <Card>
           <CardImg
@@ -54,17 +28,41 @@ class Products extends Component {
             alt="Card image cap"
           />
           <CardBody>
-            <h6 className="cardText">{p.title}</h6>
+            <h6 className="cardText">{p.name}</h6>
             <h6 className="cardText" style={{ color: "#e78536" }}>
               {p.desc}
             </h6>
             <h6>{p.price}</h6>
           </CardBody>
         </Card>
-        <button className="product-btn">ADD</button>
+        {!p.quantity && (
+          <button
+            className="product-btn"
+            onClick={() => this.props.incQuantity(id)}
+          >
+            ADD
+          </button>
+        )}
+        {p.quantity !== 0 && (
+          <div className="row">
+            <button
+              className="prod-inc-btn col"
+              onClick={() => this.props.decQuantity(id)}
+            >
+              -
+            </button>
+            <p className="pt-2">{p.quantity}</p>
+            <button
+              className="prod-inc-btn col"
+              onClick={() => this.props.incQuantity(id)}
+            >
+              +
+            </button>
+          </div>
+        )}
       </div>
     );
-    return <React.Fragment>{this.state.products.map(card)}</React.Fragment>;
+    return <React.Fragment>{this.props.cartproducts.map(card)}</React.Fragment>;
   }
 }
 
@@ -109,7 +107,11 @@ class RenderList extends Component {
             </CardImgOverlay>
           </Card>
         </div>
-        <Products />
+        <Products
+          incQuantity={this.props.incQuantity}
+          decQuantity={this.props.decQuantity}
+          cartproducts={this.props.cartproducts}
+        />
       </div>
     );
   }
@@ -140,10 +142,25 @@ class AllProducts extends Component {
     return (
       <div className="productsDiv">
         <div className="container">
-          <RenderList cat={this.state.Category1} />
+          <RenderList
+            cat={this.state.Category1}
+            incQuantity={this.props.incQuantity}
+            decQuantity={this.props.decQuantity}
+            cartproducts={this.props.cartproducts}
+          />
           <TopCat />
-          <RenderList cat={this.state.Category2} />
-          <RenderList cat={this.state.Category3} />
+          <RenderList
+            cat={this.state.Category2}
+            incQuantity={this.props.incQuantity}
+            decQuantity={this.props.decQuantity}
+            cartproducts={this.props.cartproducts}
+          />
+          <RenderList
+            cat={this.state.Category3}
+            incQuantity={this.props.incQuantity}
+            decQuantity={this.props.decQuantity}
+            cartproducts={this.props.cartproducts}
+          />
         </div>
       </div>
     );
