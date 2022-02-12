@@ -156,3 +156,12 @@
   font-weight: bolder;
   font-size: x-large;
 }
+.catHeadDiv {
+  padding-top: 50px;
+  padding-left: 50px;
+}
+.catHead {
+  color: #0401a3;
+  font-size: 40px;
+  text-decoration: underline;
+}

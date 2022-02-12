@@ -21,6 +21,8 @@ import {
 import { Link } from "react-router-dom";
 
 class Header extends Component {
+  // let totalCost=0;
+
   constructor(props) {
     super(props);
 
@@ -47,6 +49,7 @@ class Header extends Component {
       cartModel: false,
     };
   }
+
   setuser(name) {
     this.setState((prevState) => ({
       user: name,
@@ -130,7 +133,18 @@ class Header extends Component {
   toggleNav = () => {
     this.setState({ toggleNav: !this.state.toggleNav });
   };
+  viewCart = () => {
+    if (this.state.user) this.toggleCartModel();
+    else {
+      alert("Please Login");
+      this.togglemodel();
+    }
+  };
   render(props) {
+    let totalCost = 0;
+    function addTotalCost(price) {
+      totalCost += price;
+    }
     return (
       <React.Fragment>
         <div className="row row-content ">
@@ -172,7 +186,7 @@ class Header extends Component {
               )}
             </div>
             <div className="col pt-3">
-              <button className="cart" onClick={this.toggleCartModel}>
+              <button className="cart" onClick={this.viewCart}>
                 Cart
               </button>
             </div>
@@ -465,16 +479,54 @@ class Header extends Component {
         <Modal isOpen={this.state.cartModel}>
           <ModalHeader>Cart Items</ModalHeader>
 
-          <div style={{ padding: 20 }}>
+          <table style={{ padding: 20, margin: 30 }}>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
             {this.props.cartproducts.map((a, i) => {
               if (a.quantity) {
+                addTotalCost(parseFloat(a.price.slice(1)) * a.quantity);
                 return (
-                  <p key={i}>
-                    {a.name} {"      "}x{a.quantity}
-                  </p>
+                  <tr key={i}>
+                    <td>{a.name}</td>
+                    <th>x{a.quantity}</th>
+                    <td>{a.price}</td>
+                  </tr>
                 );
               }
             })}
+            <tr>
+              <td>Total</td>
+              <th></th>
+              <th>{totalCost}</th>
+            </tr>
+          </table>
+
+          <div style={{ padding: 30 }}>
+            <h5>Shipping address</h5>
+            <div style={{ paddingTop: 20 }}>
+              <input type="text" placeholder="Name" />
+              <br />
+              <br />
+              <input type="text" placeholder="House Number" />
+              <br />
+              <br />
+              <input type="text" placeholder="Colony" />
+              <br />
+              <br />
+              <input type="text" placeholder="Address Line 1" />
+              <br />
+              <br />
+              <input type="text" placeholder="Address Line 2" />
+              <br />
+              <br />
+              <input type="number" placeholder="Pincode" />
+              <br />
+              <br />
+              <input type="number" placeholder="Phone Number" />
+            </div>
           </div>
           <div>
             <button
@@ -487,7 +539,9 @@ class Header extends Component {
             </button>
             <button
               onClick={() => {
+                this.props.resetProds();
                 this.toggleCartModel();
+                alert("order placed successfully");
               }}
               style={{ margin: 10 }}
             >

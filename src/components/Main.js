@@ -13,6 +13,7 @@ class Main extends Component {
     super(props);
     this.incQuantity = this.incQuantity.bind(this);
     this.decQuantity = this.decQuantity.bind(this);
+    this.resetProds = this.resetProds.bind(this);
     this.state = {
       cartproducts: productsList,
     };
@@ -27,7 +28,9 @@ class Main extends Component {
     temp[id].quantity -= 1;
     this.setState({ cartproducts: [...temp] });
   }
-
+  resetProds() {
+    this.setState({ cartproducts: [...productsList] });
+  }
   render() {
     return (
       <React.Fragment>
@@ -35,6 +38,7 @@ class Main extends Component {
           <Header
             cartproducts={this.state.cartproducts}
             incQuantity={this.incQuantity}
+            resetProds={this.resetProds}
           />
           <Routes>
             <Route

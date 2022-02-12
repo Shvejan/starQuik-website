@@ -16,8 +16,9 @@ function Categories(props) {
 
   return (
     <div>
-      <p>this is the cat page</p>
-      <p>{params.catname}</p>
+      <div className="catHeadDiv">
+        <h2 className="catHead">Categories / {params.catname}</h2>
+      </div>
       <div className="row" style={{ padding: "100px" }}>
         <Products
           incQuantity={props.incQuantity}
