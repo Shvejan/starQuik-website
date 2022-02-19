@@ -193,7 +193,7 @@ class Header extends Component {
           </div>
         </div>
         <Navbar light expand="md" className="mainNav">
-          <div className="container just-content-center">
+          <div className="container just-content-center pl-5">
             <NavbarToggler onClick={this.toggleNav} />
             <Collapse isOpen={this.state.toggleNav} navbar>
               <Nav navbar className="">
@@ -347,66 +347,7 @@ class Header extends Component {
                     </Dropdown>
                   </NavItem>
                 </Link>
-                <Link to="/categories/Non Veg">
-                  <NavItem>
-                    <Dropdown
-                      className="d-inline-block dropdown"
-                      onMouseOver={() => this.onMouseEnter(6)}
-                      onMouseLeave={() => this.onMouseLeave(6)}
-                      isOpen={this.state.dropdownOpen6}
-                      toggle={() => this.toggle(6)}
-                      style={{ backgroundColor: "#1b1b2a" }}
-                    >
-                      <DropdownToggle
-                        className="text-white"
-                        caret
-                        color="#1b1b2a"
-                      >
-                        Non Veg
-                      </DropdownToggle>
-                      <DropdownMenu>
-                        <DropdownItem header>Category 1</DropdownItem>
-                        <DropdownItem divider />
-                        <DropdownItem disabled>Item1</DropdownItem>
-                        <DropdownItem disabled>Item2</DropdownItem>
-                        <DropdownItem disabled>Item3</DropdownItem>
-                        <DropdownItem disabled>Item4</DropdownItem>
-                        <DropdownItem disabled>Item5</DropdownItem>
-                        <DropdownItem disabled>Item6</DropdownItem>
-                      </DropdownMenu>
-                    </Dropdown>
-                  </NavItem>
-                </Link>
-                <Link to="/categories/Home Care">
-                  <NavItem>
-                    <Dropdown
-                      className="d-inline-block dropdown"
-                      onMouseOver={() => this.onMouseEnter(7)}
-                      onMouseLeave={() => this.onMouseLeave(7)}
-                      isOpen={this.state.dropdownOpen7}
-                      toggle={() => this.toggle(7)}
-                      style={{ backgroundColor: "#1b1b2a" }}
-                    >
-                      <DropdownToggle
-                        className="text-white"
-                        caret
-                        color="#1b1b2a"
-                      >
-                        Home Care
-                      </DropdownToggle>
-                      <DropdownMenu>
-                        <DropdownItem header>Category 1</DropdownItem>
-                        <DropdownItem divider />
-                        <DropdownItem disabled>Item1</DropdownItem>
-                        <DropdownItem disabled>Item2</DropdownItem>
-                        <DropdownItem disabled>Item3</DropdownItem>
-                        <DropdownItem disabled>Item4</DropdownItem>
-                        <DropdownItem disabled>Item5</DropdownItem>
-                        <DropdownItem disabled>Item6</DropdownItem>
-                      </DropdownMenu>
-                    </Dropdown>
-                  </NavItem>
-                </Link>
+
                 <Link to="/categories/Personal Care">
                   <NavItem>
                     <Dropdown
