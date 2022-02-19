@@ -146,20 +146,20 @@ class AllProducts extends Component {
             cat={this.state.Category1}
             incQuantity={this.props.incQuantity}
             decQuantity={this.props.decQuantity}
-            cartproducts={this.props.cartproducts.slice(1, 4)}
+            cartproducts={this.props.cartproducts.slice(60, 63)}
           />
           <TopCat />
           <RenderList
             cat={this.state.Category2}
             incQuantity={this.props.incQuantity}
             decQuantity={this.props.decQuantity}
-            cartproducts={this.props.cartproducts.slice(3, 6)}
+            cartproducts={this.props.cartproducts.slice(10, 13)}
           />
           <RenderList
             cat={this.state.Category3}
             incQuantity={this.props.incQuantity}
             decQuantity={this.props.decQuantity}
-            cartproducts={this.props.cartproducts.slice(2, 5)}
+            cartproducts={this.props.cartproducts.slice(1, 4)}
           />
         </div>
       </div>

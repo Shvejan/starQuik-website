@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./images/StarQuiklogo.png";
+import logo from "./images/vrlogo.png";
 import {
   Dropdown,
   DropdownToggle,
@@ -151,14 +151,17 @@ class Header extends Component {
     }
     return (
       <React.Fragment>
-        <div className="row row-content ">
+        <div className="row row-content " style={{ alignItems: "center" }}>
           <Link to="/">
-            <div className=" p-4 col-2 col-sm-2">
+            <div
+              className=" p-4 col-2 col-sm-2"
+              style={{ alignSelf: "flex-start" }}
+            >
               <img
                 src={logo}
                 alt="Logo"
                 className="fluid"
-                style={{ width: 150 }}
+                style={{ height: 60 }}
               />
             </div>
           </Link>
@@ -491,7 +494,10 @@ class Header extends Component {
                     return (
                       <tr key={i}>
                         <td>
-                          <img src={a.image} style={{ margin: "10px" }} />
+                          <img
+                            src={a.image}
+                            style={{ margin: "10px", width: "70px" }}
+                          />
                           {a.name}
                         </td>
                         <th>x{a.quantity}</th>
