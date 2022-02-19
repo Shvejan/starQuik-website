@@ -1,190 +1,131 @@
-import amul from "./images/amul.jpg";
-import oil from "./images/oil.jpg";
-import drink from "./images/drink.jpg";
 import beverages1 from "./images/product_photos/beverages1.jpg";
-import beverages2 from "./images/product_photos/beverages1.jpg";
-import beverages3 from "./images/product_photos/beverages1.jpg";
-import beverages4 from "./images/product_photos/beverages1.jpg";
-import beverages5 from "./images/product_photos/beverages1.jpg";
-import beverages6 from "./images/product_photos/beverages1.jpg";
-import beverages7 from "./images/product_photos/beverages1.jpg";
-import beverages8 from "./images/product_photos/beverages1.jpg";
-import beverages9 from "./images/product_photos/beverages1.jpg";
-import beverages10 from "./images/product_photos/beverages1.jpg";
-import beverages11 from "./images/product_photos/beverages1.jpg";
-import beverages12 from "./images/product_photos/beverages1.jpg";
-import beverages13 from "./images/product_photos/beverages1.jpg";
-import beverages14 from "./images/product_photos/beverages1.jpg";
-import beverages15 from "./images/product_photos/beverages1.jpg";
-import beverages16 from "./images/product_photos/beverages1.jpg";
-import beverages17 from "./images/product_photos/beverages1.jpg";
-import beverages18 from "./images/product_photos/beverages1.jpg";
-import beverages19 from "./images/product_photos/beverages1.jpg";
-import beverages20 from "./images/product_photos/beverages1.jpg";
+import beverages2 from "./images/product_photos/beverages2.jpg";
+import beverages3 from "./images/product_photos/beverages3.jpg";
+import beverages4 from "./images/product_photos/beverages4.jpg";
+import beverages5 from "./images/product_photos/beverages5.jpg";
+import beverages6 from "./images/product_photos/beverages6.jpg";
+import beverages7 from "./images/product_photos/beverages7.jpg";
+import beverages8 from "./images/product_photos/beverages8.jpg";
+import beverages9 from "./images/product_photos/beverages9.jpg";
+import beverages10 from "./images/product_photos/beverages10.jpg";
+import beverages11 from "./images/product_photos/beverages11.jpg";
+import beverages12 from "./images/product_photos/beverages12.jpg";
+import beverages13 from "./images/product_photos/beverages13.jpg";
+import beverages14 from "./images/product_photos/beverages14.jpg";
+import beverages15 from "./images/product_photos/beverages15.jpg";
+import beverages16 from "./images/product_photos/beverages16.jpg";
+import beverages17 from "./images/product_photos/beverages17.jpg";
+import beverages18 from "./images/product_photos/beverages18.jpg";
+import beverages19 from "./images/product_photos/beverages19.jpg";
+import beverages20 from "./images/product_photos/beverages20.jpg";
 
 import frozen1 from "./images/product_photos/frozen1.jpg";
-import frozen2 from "./images/product_photos/frozen1.jpg";
-import frozen3 from "./images/product_photos/frozen1.jpg";
-import frozen4 from "./images/product_photos/frozen1.jpg";
-import frozen5 from "./images/product_photos/frozen1.jpg";
-import frozen6 from "./images/product_photos/frozen1.jpg";
-import frozen7 from "./images/product_photos/frozen1.jpg";
-import frozen8 from "./images/product_photos/frozen1.jpg";
-import frozen9 from "./images/product_photos/frozen1.jpg";
-import frozen10 from "./images/product_photos/frozen1.jpg";
-import frozen11 from "./images/product_photos/frozen1.jpg";
-import frozen12 from "./images/product_photos/frozen1.jpg";
-import frozen13 from "./images/product_photos/frozen1.jpg";
-import frozen14 from "./images/product_photos/frozen1.jpg";
-import frozen15 from "./images/product_photos/frozen1.jpg";
-import frozen16 from "./images/product_photos/frozen1.jpg";
-import frozen17 from "./images/product_photos/frozen1.jpg";
-import frozen18 from "./images/product_photos/frozen1.jpg";
-import frozen19 from "./images/product_photos/frozen1.jpg";
-import frozen20 from "./images/product_photos/frozen1.jpg";
+import frozen2 from "./images/product_photos/frozen2.jpg";
+import frozen3 from "./images/product_photos/frozen3.jpg";
+import frozen4 from "./images/product_photos/frozen4.jpg";
+import frozen5 from "./images/product_photos/frozen5.jpg";
+import frozen6 from "./images/product_photos/frozen6.jpg";
+import frozen7 from "./images/product_photos/frozen7.jpg";
+import frozen8 from "./images/product_photos/frozen8.jpg";
+import frozen9 from "./images/product_photos/frozen9.jpg";
+import frozen10 from "./images/product_photos/frozen10.jpg";
+import frozen11 from "./images/product_photos/frozen11.jpg";
+import frozen12 from "./images/product_photos/frozen12.jpg";
+import frozen13 from "./images/product_photos/frozen13.jpg";
+import frozen14 from "./images/product_photos/frozen14.jpg";
+import frozen15 from "./images/product_photos/frozen15.jpg";
+import frozen16 from "./images/product_photos/frozen16.jpg";
+import frozen17 from "./images/product_photos/frozen17.jpg";
+import frozen18 from "./images/product_photos/frozen18.jpg";
+import frozen19 from "./images/product_photos/frozen19.jpg";
+import frozen20 from "./images/product_photos/frozen20.jpg";
 
 import branded1 from "./images/product_photos/branded1.jpg";
-import branded2 from "./images/product_photos/branded1.jpg";
-import branded3 from "./images/product_photos/branded1.jpg";
-import branded4 from "./images/product_photos/branded1.jpg";
-import branded5 from "./images/product_photos/branded1.jpg";
-import branded6 from "./images/product_photos/branded1.jpg";
-import branded7 from "./images/product_photos/branded1.jpg";
-import branded8 from "./images/product_photos/branded1.jpg";
-import branded9 from "./images/product_photos/branded1.jpg";
-import branded10 from "./images/product_photos/branded1.jpg";
-import branded11 from "./images/product_photos/branded1.jpg";
-import branded12 from "./images/product_photos/branded1.jpg";
-import branded13 from "./images/product_photos/branded1.jpg";
-import branded14 from "./images/product_photos/branded1.jpg";
-import branded15 from "./images/product_photos/branded1.jpg";
-import branded16 from "./images/product_photos/branded1.jpg";
-import branded17 from "./images/product_photos/branded1.jpg";
-import branded18 from "./images/product_photos/branded1.jpg";
-import branded19 from "./images/product_photos/branded1.jpg";
-import branded20 from "./images/product_photos/branded1.jpg";
+import branded2 from "./images/product_photos/branded2.jpg";
+import branded3 from "./images/product_photos/branded3.jpg";
+import branded4 from "./images/product_photos/branded4.jpg";
+import branded5 from "./images/product_photos/branded5.jpg";
+import branded6 from "./images/product_photos/branded6.jpg";
+import branded7 from "./images/product_photos/branded7.jpg";
+import branded8 from "./images/product_photos/branded8.jpg";
+import branded9 from "./images/product_photos/branded9.jpg";
+import branded10 from "./images/product_photos/branded10.jpg";
+import branded11 from "./images/product_photos/branded11.jpg";
+import branded12 from "./images/product_photos/branded12.jpg";
+import branded13 from "./images/product_photos/branded13.jpg";
+import branded14 from "./images/product_photos/branded14.jpg";
+import branded15 from "./images/product_photos/branded15.jpg";
+import branded16 from "./images/product_photos/branded16.jpg";
+import branded17 from "./images/product_photos/branded17.jpg";
+import branded18 from "./images/product_photos/branded18.jpg";
+import branded19 from "./images/product_photos/branded19.jpg";
+import branded20 from "./images/product_photos/branded20.jpg";
 
 import dairy1 from "./images/product_photos/dairy1.jpg";
-import dairy2 from "./images/product_photos/dairy1.jpg";
-import dairy3 from "./images/product_photos/dairy1.jpg";
-import dairy4 from "./images/product_photos/dairy1.jpg";
-import dairy5 from "./images/product_photos/dairy1.jpg";
-import dairy6 from "./images/product_photos/dairy1.jpg";
-import dairy7 from "./images/product_photos/dairy1.jpg";
-import dairy8 from "./images/product_photos/dairy1.jpg";
-import dairy9 from "./images/product_photos/dairy1.jpg";
-import dairy10 from "./images/product_photos/dairy1.jpg";
-import dairy11 from "./images/product_photos/dairy1.jpg";
-import dairy12 from "./images/product_photos/dairy1.jpg";
-import dairy13 from "./images/product_photos/dairy1.jpg";
-import dairy14 from "./images/product_photos/dairy1.jpg";
-import dairy15 from "./images/product_photos/dairy1.jpg";
-import dairy16 from "./images/product_photos/dairy1.jpg";
-import dairy17 from "./images/product_photos/dairy1.jpg";
-import dairy18 from "./images/product_photos/dairy1.jpg";
-import dairy19 from "./images/product_photos/dairy1.jpg";
-import dairy20 from "./images/product_photos/dairy1.jpg";
+import dairy2 from "./images/product_photos/dairy2.jpg";
+import dairy3 from "./images/product_photos/dairy3.jpg";
+import dairy4 from "./images/product_photos/dairy4.jpg";
+import dairy5 from "./images/product_photos/dairy5.jpg";
+import dairy6 from "./images/product_photos/dairy6.jpg";
+import dairy7 from "./images/product_photos/dairy7.jpg";
+import dairy8 from "./images/product_photos/dairy8.jpg";
+import dairy9 from "./images/product_photos/dairy9.jpg";
+import dairy10 from "./images/product_photos/dairy10.jpg";
+import dairy11 from "./images/product_photos/dairy11.jpg";
+import dairy12 from "./images/product_photos/dairy12.jpg";
+import dairy13 from "./images/product_photos/dairy13.jpg";
+import dairy14 from "./images/product_photos/dairy14.jpg";
+import dairy15 from "./images/product_photos/dairy15.jpg";
+import dairy16 from "./images/product_photos/dairy16.jpg";
+import dairy17 from "./images/product_photos/dairy17.jpg";
+import dairy18 from "./images/product_photos/dairy18.jpg";
+import dairy19 from "./images/product_photos/dairy19.jpg";
+import dairy20 from "./images/product_photos/dairy20.jpg";
 
 import fresh1 from "./images/product_photos/fresh1.jpg";
-import fresh2 from "./images/product_photos/fresh1.jpg";
-import fresh3 from "./images/product_photos/fresh1.jpg";
-import fresh4 from "./images/product_photos/fresh1.jpg";
-import fresh5 from "./images/product_photos/fresh1.jpg";
-import fresh6 from "./images/product_photos/fresh1.jpg";
-import fresh7 from "./images/product_photos/fresh1.jpg";
-import fresh8 from "./images/product_photos/fresh1.jpg";
-import fresh9 from "./images/product_photos/fresh1.jpg";
-import fresh10 from "./images/product_photos/fresh1.jpg";
+import fresh2 from "./images/product_photos/fresh2.jpg";
+import fresh3 from "./images/product_photos/fresh3.jpg";
+import fresh4 from "./images/product_photos/fresh4.jpg";
+import fresh5 from "./images/product_photos/fresh5.jpg";
+import fresh6 from "./images/product_photos/fresh6.jpg";
+import fresh7 from "./images/product_photos/fresh7.jpg";
+import fresh8 from "./images/product_photos/fresh8.jpg";
+import fresh9 from "./images/product_photos/fresh9.jpg";
+import fresh10 from "./images/product_photos/fresh10.jpg";
 
 import veg1 from "./images/product_photos/veg1.jpg";
-import veg2 from "./images/product_photos/veg1.jpg";
-import veg3 from "./images/product_photos/veg1.jpg";
-import veg4 from "./images/product_photos/veg1.jpg";
-import veg5 from "./images/product_photos/veg1.jpg";
-import veg6 from "./images/product_photos/veg1.jpg";
-import veg7 from "./images/product_photos/veg1.jpg";
-import veg8 from "./images/product_photos/veg1.jpg";
-import veg9 from "./images/product_photos/veg1.jpg";
-import veg10 from "./images/product_photos/veg1.jpg";
+import veg2 from "./images/product_photos/veg2.jpg";
+import veg3 from "./images/product_photos/veg3.jpg";
+import veg4 from "./images/product_photos/veg4.jpg";
+import veg5 from "./images/product_photos/veg5.jpg";
+import veg6 from "./images/product_photos/veg6.jpg";
+import veg7 from "./images/product_photos/veg7.jpg";
+import veg8 from "./images/product_photos/veg8.jpg";
+import veg9 from "./images/product_photos/veg9.jpg";
+import veg10 from "./images/product_photos/veg10.jpg";
 
 import personalcare1 from "./images/product_photos/personalcare1.jpg";
-import personalcare2 from "./images/product_photos/personalcare1.jpg";
-import personalcare3 from "./images/product_photos/personalcare1.jpg";
-import personalcare4 from "./images/product_photos/personalcare1.jpg";
-import personalcare5 from "./images/product_photos/personalcare1.jpg";
-import personalcare6 from "./images/product_photos/personalcare1.jpg";
-import personalcare7 from "./images/product_photos/personalcare1.jpg";
-import personalcare8 from "./images/product_photos/personalcare1.jpg";
-import personalcare9 from "./images/product_photos/personalcare1.jpg";
-import personalcare10 from "./images/product_photos/personalcare1.jpg";
-import personalcare11 from "./images/product_photos/personalcare1.jpg";
-import personalcare12 from "./images/product_photos/personalcare1.jpg";
-import personalcare13 from "./images/product_photos/personalcare1.jpg";
-import personalcare14 from "./images/product_photos/personalcare1.jpg";
-import personalcare15 from "./images/product_photos/personalcare1.jpg";
-import personalcare16 from "./images/product_photos/personalcare1.jpg";
-import personalcare17 from "./images/product_photos/personalcare1.jpg";
-import personalcare18 from "./images/product_photos/personalcare1.jpg";
-import personalcare19 from "./images/product_photos/personalcare1.jpg";
-import personalcare20 from "./images/product_photos/personalcare1.jpg";
+import personalcare2 from "./images/product_photos/personalcare2.jpg";
+import personalcare3 from "./images/product_photos/personalcare3.jpg";
+import personalcare4 from "./images/product_photos/personalcare4.jpg";
+import personalcare5 from "./images/product_photos/personalcare5.jpg";
+import personalcare6 from "./images/product_photos/personalcare6.jpg";
+import personalcare7 from "./images/product_photos/personalcare7.jpg";
+import personalcare8 from "./images/product_photos/personalcare8.jpg";
+import personalcare9 from "./images/product_photos/personalcare9.jpg";
+import personalcare10 from "./images/product_photos/personalcare10.jpg";
+import personalcare11 from "./images/product_photos/personalcare11.jpg";
+import personalcare12 from "./images/product_photos/personalcare12.jpg";
+import personalcare13 from "./images/product_photos/personalcare13.jpg";
+import personalcare14 from "./images/product_photos/personalcare14.jpg";
+import personalcare15 from "./images/product_photos/personalcare15.jpg";
+import personalcare16 from "./images/product_photos/personalcare16.jpg";
+import personalcare17 from "./images/product_photos/personalcare17.jpg";
+import personalcare18 from "./images/product_photos/personalcare18.jpg";
+import personalcare19 from "./images/product_photos/personalcare19.jpg";
+import personalcare20 from "./images/product_photos/personalcare20.jpg";
 
-// export const productsList = [
-//   {
-//     id: 0,
-//     name: "Amul Pasteurised Butter - 500 Gm",
-//     desc: "Super Price Rs.219 Code Star5",
-//     price: "₹12.99",
-//     image: amul,
-//     quantity: 0,
-//     category: ""Beverages"",
-//   },
-//   {
-//     id: 1,
-//     name: "Sunday Sunflower Oil Pouch - 1 Ltr",
-//     desc: "Super Price Rs.105 Code Star5",
-//     price: "₹111.00",
-//     image: oil,
-//     quantity: 0,
-//     category: ""Branded Food"",
-//   },
-//   {
-//     id: 2,
-//     name: "Dutchie Strawberry - 200 Ml",
-//     desc: "Buy 2 Get 1 Free",
-//     price: "₹24.93",
-//     image: drink,
-//     quantity: 0,
-//     category: "Diary,Bakery",
-//   },
-//   {
-//     id: 3,
-//     name: "Amul Pasteurised Butter - 500 Gm",
-//     desc: "Super Price Rs.219 Code Star5",
-//     price: "₹12.99",
-//     image: amul,
-//     quantity: 0,
-//     category: ""Beverages"",
-//   },
-//   {
-//     id: 4,
-//     name: "Sunday Sunflower Oil Pouch - 1 Ltr",
-//     desc: "Super Price Rs.105 Code Star5",
-//     price: "₹111.00",
-//     image: oil,
-//     quantity: 0,
-//     category: ""Branded Food"",
-//   },
-//   {
-//     id: 5,
-//     name: "Dutchie Strawberry - 200 Ml",
-//     desc: "Buy 2 Get 1 Free",
-//     price: "₹24.93",
-//     image: drink,
-//     quantity: 0,
-//     category: "Diary,Bakery",
-//   },
-// ];
-export const productsList = [
+let productsList = [
   {
     name: "Red Bull Energy Drink: 4x250 ml",
     desc: "Red Bull",
@@ -1109,7 +1050,7 @@ export const productsList = [
     category: "Personal Care",
   },
   {
-    name: "Garnier Bright Complete Vitamin C SPF40 Serum Cream: 45 gms",
+    name: "Garnier Bright Complete ",
     desc: "Garnier",
     price: "₹179",
     image: personalcare16,
@@ -1117,7 +1058,7 @@ export const productsList = [
     category: "Personal Care",
   },
   {
-    name: "Lotus Herbals Safe Sun SPF 50 Matte Gel: 100 gms",
+    name: "Lotus Herbals ",
     desc: "Lotus Herbals",
     price: "₹318",
     image: personalcare17,
@@ -1125,7 +1066,7 @@ export const productsList = [
     category: "Personal Care",
   },
   {
-    name: "Nivea Strawberry Shine Caring Lip Balm: 4.8 gms",
+    name: "Nivea Strawberry ",
     desc: "Nivea",
     price: "₹139",
     image: personalcare18,
@@ -1133,7 +1074,7 @@ export const productsList = [
     category: "Personal Care",
   },
   {
-    name: "Lakme Sun Expert SPF 50 PA+++ Ultra Matte Lotion: 100 ml",
+    name: "Lakme Sun",
     desc: "Pond`s",
     price: "₹430",
     image: personalcare19,
@@ -1141,7 +1082,7 @@ export const productsList = [
     category: "Personal Care",
   },
   {
-    name: "Lotus SPF - Skin Whitening & Brightening Gel Creme: 60 gms",
+    name: "Lotus SPF ",
     desc: "Lotus",
     price: "₹270",
     image: personalcare20,
@@ -1149,3 +1090,8 @@ export const productsList = [
     category: "Personal Care",
   },
 ];
+
+for (let i = 0; i < productsList.length; i++) {
+  productsList[i].id = i;
+}
+export default productsList;

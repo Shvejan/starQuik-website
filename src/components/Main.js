@@ -7,7 +7,7 @@ import WhyChoose from "./WhyChoose";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Categories from "./Categories";
-import { productsList } from "./productsData";
+import productsList from "./productsData";
 class Main extends Component {
   constructor(props) {
     super(props);

@@ -19,7 +19,7 @@ import {
   ModalHeader,
 } from "reactstrap";
 import { Link } from "react-router-dom";
-
+import banner from "./images/login.jpg";
 class Header extends Component {
   // let totalCost=0;
 
@@ -141,9 +141,13 @@ class Header extends Component {
     }
   };
   render(props) {
-    let totalCost = 0;
+    let totalCost = 0,
+      totalQuantity = 0;
     function addTotalCost(price) {
       totalCost += price;
+    }
+    function addTotalQuantity(q) {
+      totalQuantity += q;
     }
     return (
       <React.Fragment>
@@ -193,7 +197,7 @@ class Header extends Component {
           </div>
         </div>
         <Navbar light expand="md" className="mainNav">
-          <div className="container just-content-center pl-5">
+          <div className="container just-content-center ">
             <NavbarToggler onClick={this.toggleNav} />
             <Collapse isOpen={this.state.toggleNav} navbar>
               <Nav navbar className="">
@@ -382,102 +386,184 @@ class Header extends Component {
             </Collapse>
           </div>
         </Navbar>
-        <Modal isOpen={this.state.model}>
-          <ModalHeader>User Login</ModalHeader>
+        <Modal
+          isOpen={this.state.model}
+          size="lg"
+          style={{ maxWidth: "1500px", width: "100%" }}
+        >
+          <ModalHeader style={{ backgroundColor: "#59e7db" }}>
+            User Login
+          </ModalHeader>
           <div
             style={{
-              padding: 30,
               alignItems: "center",
               width: "100%",
               justifyContent: "center",
+              height: "600px",
+              overflow: "hidden",
             }}
           >
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-              style={{ margin: 10 }}
-              placeholder="User Name"
-            />
-            <br />
-            <input
-              type="password"
-              style={{ margin: 10 }}
-              placeholder="Password"
-            />
-            <br />
-            <button
-              onClick={() => {
-                this.setuser(this.state.value);
-                this.togglemodel();
+            <div
+              className="row"
+              style={{
+                justifyContent: "center",
               }}
-              style={{ margin: 10 }}
             >
-              Lesgoo
-            </button>
-          </div>
-        </Modal>
-        <Modal isOpen={this.state.cartModel}>
-          <ModalHeader>Cart Items</ModalHeader>
+              <div
+                className="col-8"
+                style={{
+                  overflow: "hidden",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center",
+                }}
+              >
+                <img src={banner} />
+              </div>
+              <div
+                className="col-4"
+                style={{
+                  paddingTop: "90px",
+                }}
+              >
+                <label for="exampleInputEmail1">Username</label>
+                <input
+                  type="text"
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                  style={{ margin: 10 }}
+                  placeholder="User Name"
+                  className="form-control"
+                />
+                <br />
+                <label for="exampleInputEmail1">Password</label>
 
-          <table style={{ padding: 20, margin: 30 }}>
-            <tr>
-              <th>Product</th>
-              <th>Quantity</th>
-              <th>Price</th>
-            </tr>
-            {this.props.cartproducts.map((a, i) => {
-              if (a.quantity) {
-                addTotalCost(parseFloat(a.price.slice(1)) * a.quantity);
-                return (
-                  <tr key={i}>
-                    <td>{a.name}</td>
-                    <th>x{a.quantity}</th>
-                    <td>{a.price}</td>
-                  </tr>
-                );
-              }
-            })}
-            <tr>
-              <td>Total</td>
-              <th></th>
-              <th>{totalCost}</th>
-            </tr>
-          </table>
-
-          <div style={{ padding: 30 }}>
-            <h5>Shipping address</h5>
-            <div style={{ paddingTop: 20 }}>
-              <input type="text" placeholder="Name" />
-              <br />
-              <br />
-              <input type="text" placeholder="House Number" />
-              <br />
-              <br />
-              <input type="text" placeholder="Colony" />
-              <br />
-              <br />
-              <input type="text" placeholder="Address Line 1" />
-              <br />
-              <br />
-              <input type="text" placeholder="Address Line 2" />
-              <br />
-              <br />
-              <input type="number" placeholder="Pincode" />
-              <br />
-              <br />
-              <input type="number" placeholder="Phone Number" />
+                <input
+                  type="password"
+                  style={{ margin: 10 }}
+                  className="form-control"
+                  placeholder="Password"
+                />
+                <br />
+                <button
+                  onClick={() => {
+                    this.setuser(this.state.value);
+                    this.togglemodel();
+                  }}
+                  style={{ margin: 10 }}
+                  className="btn btn-success"
+                >
+                  Login
+                </button>
+                <button
+                  onClick={() => {
+                    this.togglemodel();
+                  }}
+                  style={{ margin: 10 }}
+                  className="btn btn-danger"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
+        </Modal>
+        <Modal
+          isOpen={this.state.cartModel}
+          size="lg"
+          style={{ maxWidth: "1500px", width: "100%" }}
+        >
+          <ModalHeader style={{ backgroundColor: "#59e7db" }}>
+            Cart Items
+          </ModalHeader>
+          <div className="row">
+            <div className="col-7">
+              <table style={{ padding: 20, margin: 30, width: "100%" }}>
+                <tr>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                </tr>
+                {this.props.cartproducts.map((a, i) => {
+                  if (a.quantity) {
+                    addTotalCost(parseFloat(a.price.slice(1)) * a.quantity);
+                    addTotalQuantity(a.quantity);
+                    return (
+                      <tr key={i}>
+                        <td>
+                          <img src={a.image} style={{ margin: "10px" }} />
+                          {a.name}
+                        </td>
+                        <th>x{a.quantity}</th>
+                        <td>{a.price}</td>
+                      </tr>
+                    );
+                  }
+                })}
+                <tr style={{ height: "200px" }}>
+                  <th>Total</th>
+                  <th>{totalQuantity}</th>
+                  <th>{totalCost}</th>
+                </tr>
+              </table>
+            </div>
+            <div className="col-5" style={{ padding: 30 }}>
+              <div>
+                <h5>Shipping address</h5>
+                <div style={{ paddingTop: 20 }}>
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    className="addressInput"
+                  />
+                  <br />
+                  <br />
+                  <input
+                    type="text"
+                    placeholder="House Number"
+                    className="addressInput"
+                  />
+                  <br />
+                  <br />
+                  <input
+                    type="text"
+                    placeholder="Colony"
+                    className="addressInput"
+                  />
+                  <br />
+                  <br />
+                  <input
+                    type="text"
+                    placeholder="Address Line 1"
+                    className="addressInput"
+                  />
+                  <br />
+                  <br />
+                  <input
+                    type="text"
+                    placeholder="Address Line 2"
+                    className="addressInput"
+                  />
+                  <br />
+                  <br />
+                  <input
+                    type="number"
+                    placeholder="Pincode"
+                    className="addressInput"
+                  />
+                  <br />
+                  <br />
+                  <input
+                    type="number"
+                    placeholder="Phone Number"
+                    className="addressInput"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div>
-            <button
-              onClick={() => {
-                this.toggleCartModel();
-              }}
-              style={{ margin: 10 }}
-            >
-              Close
-            </button>
             <button
               onClick={() => {
                 this.props.resetProds();
@@ -485,8 +571,18 @@ class Header extends Component {
                 alert("order placed successfully");
               }}
               style={{ margin: 10 }}
+              className="btn btn-success"
             >
               Place Order
+            </button>
+            <button
+              onClick={() => {
+                this.toggleCartModel();
+              }}
+              style={{ margin: 10 }}
+              className="btn btn-danger"
+            >
+              Close
             </button>
           </div>
         </Modal>

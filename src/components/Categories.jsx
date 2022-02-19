@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Products from "./Products";
-import { productsList } from "./productsData";
+import productsList from "./productsData";
 function Categories(props) {
   const [products, setproducts] = useState([]);
   let params = useParams();
