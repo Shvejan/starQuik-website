@@ -70,32 +70,32 @@ class Header extends Component {
     }));
   }
   onMouseEnter(id) {
-    switch (id) {
-      case 1:
-        this.setState({ dropdownOpen1: true });
-        return;
-      case 2:
-        this.setState({ dropdownOpen2: true });
-        return;
-      case 3:
-        this.setState({ dropdownOpen3: true });
-        return;
-      case 4:
-        this.setState({ dropdownOpen4: true });
-        return;
-      case 5:
-        this.setState({ dropdownOpen5: true });
-        return;
-      case 6:
-        this.setState({ dropdownOpen6: true });
-        return;
-      case 7:
-        this.setState({ dropdownOpen7: true });
-        return;
-      case 8:
-        this.setState({ dropdownOpen8: true });
-        return;
-    }
+    // switch (id) {
+    //   case 1:
+    //     this.setState({ dropdownOpen1: true });
+    //     return;
+    //   case 2:
+    //     this.setState({ dropdownOpen2: true });
+    //     return;
+    //   case 3:
+    //     this.setState({ dropdownOpen3: true });
+    //     return;
+    //   case 4:
+    //     this.setState({ dropdownOpen4: true });
+    //     return;
+    //   case 5:
+    //     this.setState({ dropdownOpen5: true });
+    //     return;
+    //   case 6:
+    //     this.setState({ dropdownOpen6: true });
+    //     return;
+    //   case 7:
+    //     this.setState({ dropdownOpen7: true });
+    //     return;
+    //   case 8:
+    //     this.setState({ dropdownOpen8: true });
+    //     return;
+    // }
   }
   toggleCartModel() {
     this.setState((prevState) => ({
