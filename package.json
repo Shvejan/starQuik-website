@@ -16,9 +16,9 @@
     "react-dom": "^16.14.0",
     "react-hover-animation": "^2.1.1",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-slick": "^0.25.2",
-    "react-slideshow-image": "^1.4.2",
+    "react-slideshow-image": "^1.5.3",
     "reactstrap": "^8.10.1"
   },
   "scripts": {
